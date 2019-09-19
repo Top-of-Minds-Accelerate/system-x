@@ -19,6 +19,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 	<dependency>
+
 <groupId>org.springframework.boot</groupId>
 <artifactId>spring-boot-starter-security</artifactId>
 </dependency>
@@ -41,6 +42,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+
     </properties>
 
 
@@ -49,6 +51,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>se.topofminds.accelerate.SystemXApplication</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>
