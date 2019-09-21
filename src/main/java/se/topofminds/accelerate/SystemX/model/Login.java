@@ -1,4 +1,4 @@
-package se.topofminds.accelerate.model;
+package se.topofminds.accelerate.SystemX.model;
 
 public class Login {
     private String username;
