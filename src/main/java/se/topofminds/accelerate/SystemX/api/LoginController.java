@@ -10,6 +10,7 @@ public class LoginController {
     public String greeting(@RequestBody Login login) {
         return "Hello";
     }
+
     @GetMapping("/test")
     public String greeting() {
         return "Hello";
