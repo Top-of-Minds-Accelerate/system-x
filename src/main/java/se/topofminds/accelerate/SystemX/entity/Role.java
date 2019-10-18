@@ -3,27 +3,28 @@ package se.topofminds.accelerate.SystemX.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(uniqueConstraints={@UniqueConstraint(columnNames={"username","role"})})
+@Table(uniqueConstraints={@UniqueConstraint(columnNames={"userId","role"})})
 public class Role {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    private String username;
-    private String role;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    long id;
+    @Column(name = "USERID")
+    long userId;
+    String role;
 
-    public String getUsername() {
-        return username;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

@@ -7,16 +7,15 @@ import java.util.List;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    long id;
     @Column(unique = true)
-    private String username;
-    private String password;
+    String username;
+    String password;
 
-    @OneToMany(mappedBy = "username", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "userId", fetch = FetchType.LAZY)
     private List<Role> roles;
 
-    @OneToMany(mappedBy = "username", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "userId", fetch = FetchType.LAZY)
     private List<Privilege> privileges;
 
     public Long getId() {
