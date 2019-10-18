@@ -1,6 +1,7 @@
 package se.topofminds.accelerate.SystemX.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -12,11 +13,13 @@ public class User {
     String username;
     String password;
 
-    @OneToMany(mappedBy = "userId", fetch = FetchType.LAZY)
-    private List<Role> roles;
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @JoinColumn(name= "USERID")
+    private List<Role> roles = new ArrayList<Role>();
 
-    @OneToMany(mappedBy = "userId", fetch = FetchType.LAZY)
-    private List<Privilege> privileges;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name= "USERID")
+    private List<Privilege> privileges = new ArrayList<>();
 
     public Long getId() {
         return id;
