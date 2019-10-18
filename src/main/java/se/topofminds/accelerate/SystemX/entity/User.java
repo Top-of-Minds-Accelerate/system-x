@@ -16,6 +16,25 @@ public class User {
     @OneToMany(mappedBy = "username", fetch = FetchType.LAZY)
     private List<Role> roles;
 
+    @OneToMany(mappedBy = "username", fetch = FetchType.LAZY)
+    private List<Privilege> privileges;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<Privilege> getPrivileges() {
+        return privileges;
+    }
+
+    public void setPrivileges(List<Privilege> privileges) {
+        this.privileges = privileges;
+    }
+
     public String getUsername() {
         return username;
     }
